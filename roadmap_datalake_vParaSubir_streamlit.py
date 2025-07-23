@@ -23,7 +23,14 @@ SERVER_HOSTNAME = st.secrets["SERVER_HOSTNAME"]
 HTTP_PATH = st.secrets["HTTP_PATH"]
 ACCESS_TOKEN = st.secrets["ACCESS_TOKEN"]
 
-EXCEL_FILE_PATH = "pozos_top10.xlsx"
+EXCEL_FILE_PATH = os.path.join(os.path.dirname(__file__), "pozos_top10.xlsx")
+
+try:
+    df = pd.read_excel(EXCEL_FILE_PATH)
+    st.write("¡Archivo Excel cargado exitosamente!")
+except FileNotFoundError:
+    st.error(f"Error: Archivo Excel no encontrado en la ruta: {EXCEL_FILE_PATH}. Por favor, verifica que el archivo 'pozos_top10.xlsx' está en el mismo directorio que tu app en el repositorio de GitHub.")
+
 EXCEL_WELL_COLUMN_NAME = 'well_name'
 
 CATALOG_NAME = "cgc_data_bronze_prod"
