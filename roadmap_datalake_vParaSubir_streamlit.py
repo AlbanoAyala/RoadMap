@@ -23,7 +23,7 @@ SERVER_HOSTNAME = st.secrets["SERVER_HOSTNAME"]
 HTTP_PATH = st.secrets["HTTP_PATH"]
 ACCESS_TOKEN = st.secrets["ACCESS_TOKEN"]
 
-EXCEL_FILE_PATH = os.path.join(os.path.dirname(__file__), "pozos_top10.xlsx")
+EXCEL_FILE_PATH = os.path.join(os.path.dirname(__file__), "pozos top10.xlsx")
 
 try:
     df = pd.read_excel(EXCEL_FILE_PATH)
