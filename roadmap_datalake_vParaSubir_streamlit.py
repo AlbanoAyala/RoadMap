@@ -45,6 +45,7 @@ TIME_SERIES_COLS_TO_FETCH = ["hole_depth", "wt_on_bit", "rop", "pump_rate", "rot
 DATA_LIMIT_PER_WELL = 100000
 PUMP_RATE_CONVERSION_FACTOR = 264.17
 
+st.set_page_config(layout="wide", page_title="Dashboard de Optimización de Perforación")
 # ==============================================================================
 # Funciones de Extracción y Preprocesamiento (Optimizadas con Caché de Streamlit)
 # ==============================================================================
@@ -276,7 +277,7 @@ def optimizar_parametros_perforacion(
 # Interfaz de Usuario con Streamlit
 # ==============================================================================
 
-st.set_page_config(layout="wide", page_title="Dashboard de Optimización de Perforación")
+
 
 # --- Tema Oscuro y estilos personalizados ---
 st.markdown(
